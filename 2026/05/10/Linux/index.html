@@ -27,7 +27,7 @@
 <meta property="og:description" content="概述操作系统操作系统是应用软件和硬件设备之间的中间层，提供文件管理，内存管理，进程管理等功能。核心作用：协调和分配计算机硬件资源包括CPU、内存、磁盘、外设等。计算机所有应用软件都运行在操作系统上，通过调用操作系统提供的API来申请运行所需要的资源。常见的操作系统包括Linux、Windows、Mac OS等。Linux系统免费开源，占用系统资源少并且轻量同时稳定性好。Windows引入图形界面资">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-10T05:32:13.000Z">
-<meta property="article:modified_time" content="2026-05-11T06:56:28.520Z">
+<meta property="article:modified_time" content="2026-05-11T06:57:28.000Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -404,7 +404,7 @@
 <li>普通用户：只能操作部分有权限的文件和目录。<br>Linux普通用户有用户组的概念，一个普通用户属于一个用户组。<br>从一个文件&#x2F;目录视角来看，权限管理分为三类：创建用户owner、同组其他用户、其他组用户。其中owner拥有当前文件&#x2F;目录全部权限，可以给其他两类分配权限。<br>Linux通过ID来区分用户，包括用户ID<code>User ID</code>和组ID<code>Group ID</code>。存储时存储对应的ID，使用<code>ls -al</code>查询时，根据id去<code>/etc/passwd</code>和<code>/etc/group</code>查询对应的用户名和组名进行显示，查询不到显示ID。</li>
 </ul>
 <h2 id="etc-passwd文件结构"><a href="#etc-passwd文件结构" class="headerlink" title="&#x2F;etc&#x2F;passwd文件结构"></a>&#x2F;etc&#x2F;passwd文件结构</h2><p>passwd文件记录单个用户信息，每一行代表一个用户，使用<code>:</code>分割为七个字段。如下所示。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root:x:0:0:root:/root:/bin/bash<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">root:x:0:0:root:/root:/bin/bash<br></code></pre></td></tr></table></figure>
 <ol>
 <li><code>root</code>：用户登录名</li>
 <li><code>x</code>：用户密码，为了安全肯定不使用明文存储，使用<code>x</code>或者<code>*</code>代替，密码存储在<code>/etc/shadow</code>文件中</li>
@@ -415,7 +415,7 @@
 <li><code>/bin/bash</code>：用户登录系统时运行的shell程序</li>
 </ol>
 <h2 id="etc-shadow文件结构"><a href="#etc-shadow文件结构" class="headerlink" title="&#x2F;etc&#x2F;shadow文件结构"></a>&#x2F;etc&#x2F;shadow文件结构</h2><p><code>/etc/shadow</code>存储用户密码信息，同样使用<code>:</code>分割字段。如下所示。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root:8LCQI1xBInax/:20446:0:99999:7:::<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">root:8LCQI1xBInax/:20446:0:99999:7:::<br></code></pre></td></tr></table></figure>
 <p>比较重要为前两项：账户名称与加密后的密码。</p>
 <h2 id="etc-group文件结构"><a href="#etc-group文件结构" class="headerlink" title="&#x2F;etc&#x2F;group文件结构"></a>&#x2F;etc&#x2F;group文件结构</h2><p><code>/etc/group</code>记录了GID和组名的关系以及组中的用户。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span>:x:27:alice,bob<br></code></pre></td></tr></table></figure>
