@@ -1,0 +1,860 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="韩子森">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="变量Java是一种强类型语言，在声明变量类型之后类型不可改变，之后变量赋值要符合变量的类型。同时在编译期间静态检查数据类型是否匹配。基础数据类型的占用内存与操作系统位数无关。 变量初始化在Java中声明一个变量不会开辟空间创建，只有在变量初始化之后才可以使用变量，否则会报错。类中静态变量、实例变量支持默认初始化，局部变量必须显示初始化。首先类中静态变量、实例变量涉及到类加载和初始化过程。当加载一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java强化">
+<meta property="og:url" content="https://hzsup.github.io/2026/05/15/Java%E5%BC%BA%E5%8C%96/index.html">
+<meta property="og:site_name" content="hzsup">
+<meta property="og:description" content="变量Java是一种强类型语言，在声明变量类型之后类型不可改变，之后变量赋值要符合变量的类型。同时在编译期间静态检查数据类型是否匹配。基础数据类型的占用内存与操作系统位数无关。 变量初始化在Java中声明一个变量不会开辟空间创建，只有在变量初始化之后才可以使用变量，否则会报错。类中静态变量、实例变量支持默认初始化，局部变量必须显示初始化。首先类中静态变量、实例变量涉及到类加载和初始化过程。当加载一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-15T06:17:19.000Z">
+<meta property="article:modified_time" content="2026-05-15T06:19:18.321Z">
+<meta property="article:author" content="韩子森">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Java强化 - hzsup</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"hzsup.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java强化"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-05-15 14:17" pubdate>
+          2026年5月15日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java强化</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>Java是一种强类型语言，在声明变量类型之后类型不可改变，之后变量赋值要符合变量的类型。同时在编译期间静态检查数据类型是否匹配。<br>基础数据类型的占用内存与操作系统位数无关。</p>
+<h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><p>在Java中声明一个变量不会开辟空间创建，只有在变量初始化之后才可以使用变量，否则会报错。<br><strong>类中静态变量、实例变量支持默认初始化，局部变量必须显示初始化。</strong><br>首先类中静态变量、实例变量涉及到类加载和初始化过程。当加载一个类或者创建对象时，Java会开辟一块空间用于存放，类加载时静态变量被初始化或者赋值，当创建一个对象时实例变量被初始化或复制。类中存在这个属性，这部分空间就必须存在，不妨在此时给他们赋值。<br>局部变量存在于栈中，首先它的数量很多，更新迭代次数很快，JVM可以初始化但是没必要。如果程序员声明一个变量没有初始化，以后用不到，JVM为它开辟内存空间并初始化就多此一举。如果程序员需要，在给变量赋值时开辟内存正好。或者说</p>
+<blockquote>
+<p>JMV当然可以为局部变量赋默认值，但是<strong>未初始化的局部变量更有可能是程序员的疏忽，采用默认值范围会掩盖这种失误。</strong><br>因此强制程序员提供一个初始值，往往能够帮助找出程序里的缺陷。<br>而且从技术上来讲，局部变量一般来说总量大，生命周期短，JVM进行初始化开销较大。</p>
+</blockquote>
+<h2 id="取值范围与转换"><a href="#取值范围与转换" class="headerlink" title="取值范围与转换"></a>取值范围与转换</h2><p><code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>float</code>、<code>double</code>、<code>boolean</code>、<code>char</code>占用的字节空间为1、2、4、8、4、8、1、2。<br>根据占用的字节数得到每种基础类型的取值范围，<strong>注意数值溢出问题</strong>。<br>理论上小数存在无限个，但是储存浮点数的内存是有限的，因此浮点数存在精度问题，就是声明一个浮点数末尾可能不全部为0，多几个数字。因此使用浮点数时：</p>
+<ol>
+<li>不要直接使用两个浮点数进行比较，因为末尾数字不同。如果比较浮点数，设置一个最小误差，两个浮点数相减的绝对值在最小误差范围即可。</li>
+<li>浮点数强转为整数会舍弃小数点后面数字。<br><strong>关于自动类型转换和强制类型转换，小类型向大类型为自动类型转换，大类型向小类型为强制类型转换。</strong><br>对于浮点数<code>float</code>和<code>double</code>的取值范围：<br><code>float</code>内存一共4字节，32位。其中1个符号位，8个阶位和23个值位。2^23&#x3D;8388608。就是说如果想强转为<code>float</code>，6位数字完全可以，7位部分可以，7位可能存在溢出问题。<br><code>double</code>同理，一共8字节，64位。1个符号位、11个阶位和52个值位。2^52&#x3D;4503599627370496。一共16位，所以<code>double</code>精度在15-16位之间。<br>因此，<code>int</code>向<code>double</code>不会精度损失，<code>int</code>向<code>float</code>会精度损失，<code>long</code>向<code>double</code>会精度损失，<code>float</code>转换为<code>double</code>不会精度损失。</li>
+</ol>
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>Java中引用数据类型应用比较广泛，比如集合只能存放引用数据类型。因此对8种基础数据类型设计对应的包装类，封装常用方法，这样作为引用数据类型可以与其他引用类型进行交互和操作。<br>比如int包装类为Integer，long为Long，char为Character。<br>但是这样带来一个问题，使用包装类有时候不是很方便。使用Integer类是大多数使用值，每次需要调用方法才能获取。<br>因此Java设计了自动装箱和自动拆箱机制，方便包装类和基础数据类型的转换。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 自动装箱</span><br><span class="hljs-type">Integer</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;  <br><span class="hljs-comment">// 以下两种方式完全等价，第一个使用了自动拆箱</span><br><span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a;  <br><span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> a.intValue();<br></code></pre></td></tr></table></figure>
+<p>自动拆装箱是一种语法糖，本质上还是编译期调用对应的方法完成转换操作，因此<strong>使用时注意避免在循环中使用，防止由于反复自动拆装箱带来的性能损耗。</strong><br>同时在调用重载方法时，存在一个重载方法的参数为<code>int</code>类型，另一个为<code>Object</code>类型，如果传递参数为<code>Integer</code>类型，优先调用<code>Object</code>重载方法。</p>
+<h1 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h1><ol>
+<li>注意<code>i++</code>和<code>++i</code>的区别，<code>--</code>同理。</li>
+<li>注意逻辑运算符的短路，不要在判断语句加状态改变的语句。</li>
+<li>实际开发中使用运算符不要太复杂，适当时候增加括号保证代码的可读性</li>
+</ol>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p>属于Java8的新特性，是一种函数式编程的语法特性。把行为参数化，作为方法参数传递，直接赋值给一个函数式接口的变量。<br>经典例子在于取代一些繁琐的匿名内部类写法。<br>匿名内部类写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">Collections.sort(list, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Integer&gt;() &#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> &#123;  <br>        <span class="hljs-keyword">return</span> o1 - o2;  <br>    &#125;  <br>&#125;);<br></code></pre></td></tr></table></figure>
+<p>Lambda表达式写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Collections.sort(list, (a, b) -&gt; b - a);<br></code></pre></td></tr></table></figure>
+<p>Lambda表达式语法：<code>(参数列表)-&gt;{代码块;}</code>。<br>Lambda表达式可以使用局部变量，但是不可以修改。类似于<code>final</code>，引用变量可以修改内部的属性值，但是尽量不要这么做。<br>好处：</p>
+<ol>
+<li>简洁明了</li>
+<li>支持行为参数化，可以传递一个行为参数</li>
+<li>延迟执行，因为属于参数，只有参数使用时才会被执行</li>
+</ol>
+<h2 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h2><p>方法引用是<strong>Lambda的一种语法糖</strong>，编译后生成的字节码与等效的Lambda完全相同，是Lambda表达式进一步简化。<br>分为四种形式：</p>
+<ul>
+<li>静态方法引用：<code>类名::静态方法</code></li>
+<li>实例方法引用：<code>对象::实例方法</code></li>
+<li>对象方法引用：<code>类名::实例方法</code></li>
+<li>构造方法引用：<code>类名::new</code></li>
+</ul>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>Java中存在类，抽象类和接口三个概念。<br>Java8开始接口可以写默认方法实现，使用<code>default</code>或者<code>static</code>关键字。</p>
+<h2 id="多态原理"><a href="#多态原理" class="headerlink" title="多态原理"></a>多态原理</h2><p>多态：允许同一个行为具有多个不同的表现形式，或者说同一个接口使用不同的实例而执行不同的操作。<br>多态分为两种：</p>
+<ul>
+<li>编译时多态（方法重载）：同一个方法名但是存在不同的参数列表，在编译时期根据参数列表就能确定调用哪一个方法。</li>
+<li>运行时多态（方法重写）：子类重写父类方法，通过父类型引用指向子类对象，调用被重写的方法时，实际上调用子类的方法。在运行时期才能确定具体调用哪一个方法。<br>使用多态的必要条件：</li>
+</ul>
+<ol>
+<li>子类继承父类，重写父类的方法。</li>
+<li>父类引用指向子类对象。</li>
+</ol>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>Java为每个类在方法区维护了一个虚方法表，记录了该类可被重写方法的入口地址，如果子类重写了某个方法，子类的虚方法表该方法的入口地址指向子类实现。如果没有被重写，指向父类实现。<br>多态是父类引用指向子类对象：</p>
+<ol>
+<li>首先判断调用方法在父类中是否存在，不存在直接报错。</li>
+<li>存在，查询是否被子类重写<ul>
+<li>重写，调用子类方法。</li>
+<li>未重写，调用父类方法。<br> <strong>只有实例方法（可以被重写的方法）存在多态，其他静态方法、内部类、变量不存在多态。</strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="代码初始化顺序"><a href="#代码初始化顺序" class="headerlink" title="代码初始化顺序"></a>代码初始化顺序</h2><p>先加载父类，在加载子类。初始化顺序：</p>
+<ol>
+<li>静态变量&#x2F;代码块(只在当前类被加载到JVM执行一次)</li>
+<li>代码块&#x2F;类属性值（创建一次对象执行一次）</li>
+<li>构造方法</li>
+</ol>
+<h1 id="异常机制"><a href="#异常机制" class="headerlink" title="异常机制"></a>异常机制</h1><p>父类<code>Throwable</code>，两个子类<code>Error</code>和<code>Exception</code>。<br><code>Error</code>是错误，开发不需要管，一旦出现，基本上JVM停止工作。<br><code>Exception</code>：分为非受检异常<code>RuntimeException</code>及其子类和受检异常（除了<code>RuntimeException</code>之外直接继承<code>Exception</code>的类）。<br>受检异常一定要被处理，非受检异常可以处理也可以不处理。<br>异常可以使用多个<code>catch</code>逐层捕获，只要匹配到，后面的<code>catch</code>会忽略。<br><code>finally</code>语句一定会执行。在<code>return</code>语句之前执行，其中<code>return</code>后面的表达式执行完毕，暂存起来，执行<code>finally</code>，除非<code>finally</code>直接<code>return</code>返回，否则将之前的暂存值<code>return</code>返回。<br>Java8支持<code>try with resources</code>，自动释放资源，要求释放的对象实现<code>close</code>方法。<br>不要讲详细的异常信息打印到用户界面。</p>
+<h1 id="代码组织管理"><a href="#代码组织管理" class="headerlink" title="代码组织管理"></a>代码组织管理</h1><p>Java提供包机制，将职责相同类放在一个包下，更加清晰分层组织文件。通过<code>import</code>引入对应的包，如果两个不同包下类名相同，需要显示指定包名。<br>Java9之后提供模块管理，可以指定当前模块依赖哪些模块，同时把那些文件可以被其他模块使用，权限管理更加细致。</p>
+<h1 id="编程规范"><a href="#编程规范" class="headerlink" title="编程规范"></a>编程规范</h1><ol>
+<li>创建变量时每次只能声明&#x2F;创建一个，不允许在一行中声明多个变量</li>
+</ol>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ol>
+<li>枚举</li>
+<li>注解</li>
+<li><strong>Maven</strong></li>
+<li><strong>DDD</strong></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/java/" class="print-no-link">#java</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java强化</div>
+      <div>https://hzsup.github.io/2026/05/15/Java强化/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>韩子森</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年5月15日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/05/11/Java/" title="Java">
+                        <span class="hidden-mobile">Java</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
