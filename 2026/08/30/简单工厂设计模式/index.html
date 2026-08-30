@@ -19,21 +19,21 @@
   <meta name="author" content="Han Zisen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="简单工厂设计模式创建型设计模式。但是不属于23种设计模式。提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。 如何实现一个简单工厂模式包括三部分：  产品接口&#x2F;抽象类：定义了产品的规范、行为。 具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口。 产品工厂：根据传入的参数返回对应的具体产品。以计算器为例子实现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://hzsup.github.io/2026/08/23/hello-world/index.html">
+<meta property="og:title" content="简单工厂设计模式">
+<meta property="og:url" content="https://hzsup.github.io/2026/08/30/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="简单工厂设计模式创建型设计模式。但是不属于23种设计模式。提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。 如何实现一个简单工厂模式包括三部分：  产品接口&#x2F;抽象类：定义了产品的规范、行为。 具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口。 产品工厂：根据传入的参数返回对应的具体产品。以计算器为例子实现">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-08-23T05:47:18.324Z">
-<meta property="article:modified_time" content="2026-08-23T05:47:18.324Z">
+<meta property="article:published_time" content="2026-08-30T07:22:01.000Z">
+<meta property="article:modified_time" content="2026-08-30T07:29:00.677Z">
 <meta property="article:author" content="Han Zisen">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>简单工厂设计模式 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -302,7 +302,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="简单工厂设计模式"></span>
           
         </div>
 
@@ -313,8 +313,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-08-23 13:47" pubdate>
-          2026年8月23日 下午
+        <time datetime="2026-08-30 15:22" pubdate>
+          2026年8月30日 下午
         </time>
       </span>
     
@@ -325,7 +325,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          2.1k 字
         
       </span>
     
@@ -336,7 +336,7 @@
         
         
         
-          4 分钟
+          18 分钟
         
       </span>
     
@@ -375,24 +375,41 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">简单工厂设计模式</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p>简单工厂设计模式<br>创建型设计模式。但是不属于23种设计模式。<br>提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。</p>
+<h2 id="如何实现一个简单工厂模式"><a href="#如何实现一个简单工厂模式" class="headerlink" title="如何实现一个简单工厂模式"></a>如何实现一个简单工厂模式</h2><p>包括三部分：</p>
+<ol>
+<li>产品接口&#x2F;抽象类：定义了产品的规范、行为。</li>
+<li>具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口。</li>
+<li>产品工厂：根据传入的参数返回对应的具体产品。<br>以计算器为例子实现简单工厂模式。<br>首先，产品接口&#x2F;抽象类的实现。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Operator</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> numA, <span class="hljs-type">double</span> numB)</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后，具体产品的实现，继承抽象类，实现对应的功能，以加法和减法为例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AddOperator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Operator</span>&#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> numA, <span class="hljs-type">double</span> numB)</span> &#123;  <br>        <span class="hljs-keyword">return</span> numA + numB;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SubOperator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Operator</span> &#123;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> numA, <span class="hljs-type">double</span> numB)</span> &#123;  <br>        <span class="hljs-keyword">return</span> numA - numB;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>最后，产品工厂的实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OperatorFactory</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Operator</span> <span class="hljs-title function_">getOperator</span><span class="hljs-params">(String op)</span> &#123;  <br>        <span class="hljs-type">Operator</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">switch</span> (op) &#123;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">AddOperator</span>();  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubOperator</span>();  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">MulOperator</span>();  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">DivOperator</span>();  <br>            <span class="hljs-keyword">default</span> -&gt; <span class="hljs-literal">null</span>;  <br>        &#125;;  <br>        <span class="hljs-keyword">return</span> result;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="简单工厂模式的好处"><a href="#简单工厂模式的好处" class="headerlink" title="简单工厂模式的好处"></a>简单工厂模式的好处</h2><p>为什么要使用简单工厂模式，如果不使用简单工厂模式，客户端代码会变成类似这种：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);  <br><span class="hljs-type">double</span> <span class="hljs-variable">numA</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br><span class="hljs-type">double</span> <span class="hljs-variable">numB</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br><span class="hljs-type">String</span> <span class="hljs-variable">op</span> <span class="hljs-operator">=</span> scanner.next();  <br>Operator operator;  <br><span class="hljs-keyword">switch</span> (op) &#123;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AddOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MulOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DivOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">default</span>:  <br>        operator = <span class="hljs-literal">null</span>;  <br>        <span class="hljs-keyword">break</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>会有两个问题：</p>
+<ol>
+<li>没有一个统一的管理，扩展性很差。如果工厂的创建在多处都有使用，出现很多重复代码。假设需要添加一个新的运算类<code>ModOperator</code>，或者修改某一个类<code>AddOperator</code>的构造方法从无参构造强制变为有参构造，那么所有涉及到运算对象创建的地方都要进行修改逻辑。</li>
+<li>客户端的职责不单一。客户端应该是只负责业务逻辑，比如调用计算接口完成计算，得到结果。但是目前是创建对象、使用对象都放在客户端去做。<br>简单工厂模式解决了两个问题，<strong>客户端只依赖抽象接口和工厂，而不依赖具体产品类</strong>。将当前产品的创建逻辑统一进行管理修改的话只需要修改工厂，同时客户端不用关心代码是怎么创建的。</li>
+</ol>
+<h2 id="简单工厂模式的缺点"><a href="#简单工厂模式的缺点" class="headerlink" title="简单工厂模式的缺点"></a>简单工厂模式的缺点</h2><p>简单工厂模式中工厂和产品的<strong>解耦并不彻底</strong>。</p>
+<ol>
+<li>工厂类必须依赖所有的具体产品类，当产品类发生变化时，工厂类也要跟着变化。新增一个具体产品或者修改产品的构造方法，工厂类也要跟着进行变化。违反了开闭原则。</li>
+<li>如果创建产品的流程比较复杂，需要读取配置、连接数据库、加载资源等，整个工厂类变得十分臃肿。</li>
+</ol>
+<h2 id="什么时候使用简单工厂模式"><a href="#什么时候使用简单工厂模式" class="headerlink" title="什么时候使用简单工厂模式"></a>什么时候使用简单工厂模式</h2><ol>
+<li>产品类型相对较少，并且比较稳定。</li>
+<li>多处需要创建同一产品对象，需要进行统一管理。</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简单工厂模式通过引入工厂类，<strong>将客户端与具体产品类解耦</strong>，使客户端不再关心对象的创建细节，提升了代码的灵活性和可维护性。<br>但它<strong>并没有完全消除耦合</strong>，只是将耦合转移到了工厂类内部。当产品种类增多时，工厂类需要不断修改，违反开闭原则。因此，简单工厂模式适用于<strong>产品种类较少且相对稳定</strong>的场景。</p>
 
                 
               </div>
@@ -410,8 +427,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>https://hzsup.github.io/2026/08/23/hello-world/</div>
+      <div>简单工厂设计模式</div>
+      <div>https://hzsup.github.io/2026/08/30/简单工厂设计模式/</div>
     </div>
     <div class="license-meta">
       
@@ -423,7 +440,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年8月23日</div>
+          <div>2026年8月30日</div>
         </div>
       
       
@@ -455,15 +472,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/08/30/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="简单工厂设计模式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">简单工厂设计模式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2026/08/23/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
