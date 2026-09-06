@@ -19,22 +19,22 @@
   <meta name="author" content="Han Zisen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简单工厂设计模式创建型设计模式。但是不属于23种设计模式。提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。 如何实现一个简单工厂模式包括三部分：  产品接口&#x2F;抽象类：定义了产品的规范、行为。 具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口。 产品工厂：根据传入的参数返回对应的具体产品。以计算器为例子实现">
+    <meta name="description" content="前提：在类的结构设计上，每一类都应当尽力降低成员的访问权限。迪米特法则：如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用。如果其中一个类需要调用另一个类的某一个方法的话，可以通过第三者转发这个调用。迪米特法则强调了类之间的松耦合。类之间的耦合越弱，越有利于复用，一个处在弱耦合的类被修改，不会对有关系的类造成波及。 如何理解迪米特法则迪米特法则应该要求一个类应该只和自己的“直接朋友">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单工厂设计模式">
-<meta property="og:url" content="https://hzsup.github.io/2026/08/30/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="迪米特法则">
+<meta property="og:url" content="https://hzsup.github.io/2026/09/06/%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="简单工厂设计模式创建型设计模式。但是不属于23种设计模式。提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。 如何实现一个简单工厂模式包括三部分：  产品接口&#x2F;抽象类：定义了产品的规范、行为。 具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口。 产品工厂：根据传入的参数返回对应的具体产品。以计算器为例子实现">
+<meta property="og:description" content="前提：在类的结构设计上，每一类都应当尽力降低成员的访问权限。迪米特法则：如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用。如果其中一个类需要调用另一个类的某一个方法的话，可以通过第三者转发这个调用。迪米特法则强调了类之间的松耦合。类之间的耦合越弱，越有利于复用，一个处在弱耦合的类被修改，不会对有关系的类造成波及。 如何理解迪米特法则迪米特法则应该要求一个类应该只和自己的“直接朋友">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-08-30T07:22:01.000Z">
-<meta property="article:modified_time" content="2026-08-30T07:36:09.676Z">
+<meta property="article:published_time" content="2026-09-06T03:58:21.000Z">
+<meta property="article:modified_time" content="2026-09-06T04:00:15.875Z">
 <meta property="article:author" content="Han Zisen">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>简单工厂设计模式 - Hexo</title>
+  <title>迪米特法则 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +303,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="简单工厂设计模式"></span>
+            <span id="subtitle" data-typed-text="迪米特法则"></span>
           
         </div>
 
@@ -314,8 +314,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-08-30 15:22" pubdate>
-          2026年8月30日 下午
+        <time datetime="2026-09-06 11:58" pubdate>
+          2026年9月6日 中午
         </time>
       </span>
     
@@ -326,7 +326,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1.6k 字
         
       </span>
     
@@ -337,7 +337,7 @@
         
         
         
-          18 分钟
+          13 分钟
         
       </span>
     
@@ -376,41 +376,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">简单工厂设计模式</h1>
+            <h1 id="seo-header">迪米特法则</h1>
             
             
               <div class="markdown-body">
                 
-                <p>简单工厂设计模式<br>创建型设计模式。但是不属于23种设计模式。<br>提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。</p>
-<h2 id="如何实现一个简单工厂模式"><a href="#如何实现一个简单工厂模式" class="headerlink" title="如何实现一个简单工厂模式"></a>如何实现一个简单工厂模式</h2><p>包括三部分：</p>
+                <p>前提：在类的结构设计上，每一类都应当尽力降低成员的访问权限。<br>迪米特法则：如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用。如果其中一个类需要调用另一个类的某一个方法的话，可以通过第三者转发这个调用。<br>迪米特法则强调了类之间的松耦合。类之间的耦合越弱，越有利于复用，一个处在弱耦合的类被修改，不会对有关系的类造成波及。</p>
+<h3 id="如何理解迪米特法则"><a href="#如何理解迪米特法则" class="headerlink" title="如何理解迪米特法则"></a>如何理解迪米特法则</h3><p>迪米特法则应该要求一个类应该只和自己的“直接朋友”聊天，而不应该“陌生人”聊天。<br>什么是“直接朋友”：</p>
 <ol>
-<li>产品接口&#x2F;抽象类：定义了产品的规范、行为。</li>
-<li>具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口。</li>
-<li>产品工厂：根据传入的参数返回对应的具体产品。<br>以计算器为例子实现简单工厂模式。<br>首先，产品接口&#x2F;抽象类的实现。</li>
+<li>当前对象本身：<code>this</code></li>
+<li>方法参数中传入的对象</li>
+<li>当前对象的成员变量</li>
+<li>方法内部创建的对象<br>除此之外都为“陌生人”。</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Operator</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> numA, <span class="hljs-type">double</span> numB)</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>然后，具体产品的实现，继承抽象类，实现对应的功能，以加法和减法为例。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AddOperator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Operator</span>&#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> numA, <span class="hljs-type">double</span> numB)</span> &#123;  <br>        <span class="hljs-keyword">return</span> numA + numB;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SubOperator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Operator</span> &#123;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> numA, <span class="hljs-type">double</span> numB)</span> &#123;  <br>        <span class="hljs-keyword">return</span> numA - numB;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>最后，产品工厂的实现。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OperatorFactory</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Operator</span> <span class="hljs-title function_">getOperator</span><span class="hljs-params">(String op)</span> &#123;  <br>        <span class="hljs-type">Operator</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">switch</span> (op) &#123;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">AddOperator</span>();  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubOperator</span>();  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">MulOperator</span>();  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span> -&gt; <span class="hljs-keyword">new</span> <span class="hljs-title class_">DivOperator</span>();  <br>            <span class="hljs-keyword">default</span> -&gt; <span class="hljs-literal">null</span>;  <br>        &#125;;  <br>        <span class="hljs-keyword">return</span> result;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="简单工厂模式的好处"><a href="#简单工厂模式的好处" class="headerlink" title="简单工厂模式的好处"></a>简单工厂模式的好处</h2><p>为什么要使用简单工厂模式，如果不使用简单工厂模式，客户端代码会变成类似这种：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);  <br><span class="hljs-type">double</span> <span class="hljs-variable">numA</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br><span class="hljs-type">double</span> <span class="hljs-variable">numB</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br><span class="hljs-type">String</span> <span class="hljs-variable">op</span> <span class="hljs-operator">=</span> scanner.next();  <br>Operator operator;  <br><span class="hljs-keyword">switch</span> (op) &#123;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AddOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MulOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:  <br>        operator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DivOperator</span>();  <br>        <span class="hljs-keyword">break</span>;  <br>    <span class="hljs-keyword">default</span>:  <br>        operator = <span class="hljs-literal">null</span>;  <br>        <span class="hljs-keyword">break</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>会有两个问题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> &#123;  <br>  <br>&#125;  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Department</span> &#123;  <br>    List&lt;Employee&gt; employeeList;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">List</span>&lt;Employee&gt; <span class="hljs-title function_">getEmployeeList</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> employeeList;  <br>    &#125;  <br>&#125;  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Manager</span> &#123;  <br>    Department department;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">Department</span> <span class="hljs-title function_">getDepartment</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> department;  <br>    &#125;  <br>&#125;  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Boss</span> &#123;  <br>    Manager manager;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getDepartmentCount</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-type">List</span>&lt;Employee&gt; <span class="hljs-variable">employeeList</span> <span class="hljs-operator">=</span> manager.getDepartment().getEmployeeList();  <br>        <span class="hljs-keyword">return</span> employeeList.size();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>违背迪米特法则的部分是：<code>List&lt;Employee&gt; employeeList = manager.getDepartment().getEmployeeList();</code><br>Boss类的直接朋友是Manager，调用直接朋友的方法<code>manager.getDepartment()</code>方法是没问题的。但是<code>Department</code>不是他的直接朋友，调用<code>getEmployeeList()</code>方法应该通过第三方转发，而不是它直接调用。<br><strong>坏处</strong></p>
 <ol>
-<li>没有一个统一的管理，扩展性很差。如果工厂的创建在多处都有使用，出现很多重复代码。假设需要添加一个新的运算类<code>ModOperator</code>，或者修改某一个类<code>AddOperator</code>的构造方法从无参构造强制变为有参构造，那么所有涉及到运算对象创建的地方都要进行修改逻辑。</li>
-<li>客户端的职责不单一。客户端应该是只负责业务逻辑，比如调用计算接口完成计算，得到结果。但是目前是创建对象、使用对象都放在客户端去做。<br>简单工厂模式解决了两个问题，<strong>客户端只依赖抽象接口和工厂，而不依赖具体产品类</strong>。将当前产品的创建逻辑统一进行管理修改的话只需要修改工厂，同时客户端不用关心代码是怎么创建的。</li>
+<li>Boss和Employee的耦合度很高，比如Employee类的List改变了，变为Set，Boss也要跟着变化。但是两个不是直接朋友，变化的范围到直接朋友应该就终止。</li>
+<li>这种很长的链式调用容易出现NPE。<br><strong>修改的版本</strong></li>
 </ol>
-<h2 id="简单工厂模式的缺点"><a href="#简单工厂模式的缺点" class="headerlink" title="简单工厂模式的缺点"></a>简单工厂模式的缺点</h2><p>简单工厂模式中工厂和产品的<strong>解耦并不彻底</strong>。</p>
-<ol>
-<li>工厂类必须依赖所有的具体产品类，当产品类发生变化时，工厂类也要跟着变化。新增一个具体产品或者修改产品的构造方法，工厂类也要跟着进行变化。违反了开闭原则。</li>
-<li>如果创建产品的流程比较复杂，需要读取配置、连接数据库、加载资源等，整个工厂类变得十分臃肿。</li>
-</ol>
-<h2 id="什么时候使用简单工厂模式"><a href="#什么时候使用简单工厂模式" class="headerlink" title="什么时候使用简单工厂模式"></a>什么时候使用简单工厂模式</h2><ol>
-<li>产品类型相对较少，并且比较稳定。</li>
-<li>多处需要创建同一产品对象，需要进行统一管理。</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简单工厂模式通过引入工厂类，<strong>将客户端与具体产品类解耦</strong>，使客户端不再关心对象的创建细节，提升了代码的灵活性和可维护性。<br>但它<strong>并没有完全消除耦合</strong>，只是将耦合转移到了工厂类内部。当产品种类增多时，工厂类需要不断修改，违反开闭原则。因此，简单工厂模式适用于<strong>产品种类较少且相对稳定</strong>的场景。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> &#123;  <br>  <br>&#125;  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Department</span> &#123;  <br>    <span class="hljs-keyword">private</span> List&lt;Employee&gt; employeeList;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getEmployeeCount</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> employeeList.size();  <br>    &#125;  <br>&#125;  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Manager</span> &#123;  <br>    <span class="hljs-keyword">private</span> Department department;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getEmployeeCount</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> department.getEmployeeCount();  <br>    &#125;  <br>&#125;  <br>  <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Boss</span> &#123;  <br>    <span class="hljs-keyword">private</span> Manager manager;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getEmployeeCount</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> manager.getEmployeeCount();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>修改之后，每个类只和自己的朋友进行通信，改动的影响面限制比较小。</p>
 
                 
               </div>
@@ -435,8 +421,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>简单工厂设计模式</div>
-      <div>https://hzsup.github.io/2026/08/30/简单工厂设计模式/</div>
+      <div>迪米特法则</div>
+      <div>https://hzsup.github.io/2026/09/06/迪米特法则/</div>
     </div>
     <div class="license-meta">
       
@@ -448,7 +434,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年8月30日</div>
+          <div>2026年9月6日</div>
         </div>
       
       
@@ -480,18 +466,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/08/30/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="策略模式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">策略模式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/08/23/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2026/08/30/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="策略模式">
+                        <span class="hidden-mobile">策略模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
