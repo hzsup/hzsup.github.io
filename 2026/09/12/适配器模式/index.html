@@ -19,22 +19,22 @@
   <meta name="author" content="Han Zisen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="外观模式：结构型设计模式。它为子系统中的一组接口提供一个统一的高层接口，使得子系统更容易使用。外观模式通过创建一个“门面”类，将客户端与复杂的子系统解耦，客户端只需要与门面交互，而不需要了解子系统内部的复杂细节。 使用外观模式的好处分层隔离，实现解耦：上层只需要调用“门面”类中的方法，不关注底下子系统的实现，而“门面”类方法负责调用不同的子系统方法实现功能。上层只依赖门面类，不直接依赖子系统，减少">
+    <meta name="description" content="结构性设计模式。将一个类的接口转换为客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。适配器模式解决的问题需要的东西就在面前，但却不能使用，而短时间又无法改造它，所以想办法适配它。在软件开发中，系统的数据和行为都正确，但接口不符时，考虑使用适配器模式。目的是使控制范围之外的一个原有对象与某一接口匹配。适配器模式主要应用于希望复用一些现存的类，但是接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="外观模式">
-<meta property="og:url" content="https://hzsup.github.io/2026/09/07/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="适配器模式">
+<meta property="og:url" content="https://hzsup.github.io/2026/09/12/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="外观模式：结构型设计模式。它为子系统中的一组接口提供一个统一的高层接口，使得子系统更容易使用。外观模式通过创建一个“门面”类，将客户端与复杂的子系统解耦，客户端只需要与门面交互，而不需要了解子系统内部的复杂细节。 使用外观模式的好处分层隔离，实现解耦：上层只需要调用“门面”类中的方法，不关注底下子系统的实现，而“门面”类方法负责调用不同的子系统方法实现功能。上层只依赖门面类，不直接依赖子系统，减少">
+<meta property="og:description" content="结构性设计模式。将一个类的接口转换为客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。适配器模式解决的问题需要的东西就在面前，但却不能使用，而短时间又无法改造它，所以想办法适配它。在软件开发中，系统的数据和行为都正确，但接口不符时，考虑使用适配器模式。目的是使控制范围之外的一个原有对象与某一接口匹配。适配器模式主要应用于希望复用一些现存的类，但是接">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-09-07T15:31:18.000Z">
-<meta property="article:modified_time" content="2026-09-07T15:32:06.119Z">
+<meta property="article:published_time" content="2026-09-12T07:26:41.000Z">
+<meta property="article:modified_time" content="2026-09-12T07:27:28.287Z">
 <meta property="article:author" content="Han Zisen">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>外观模式 - Hexo</title>
+  <title>适配器模式 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +303,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="外观模式"></span>
+            <span id="subtitle" data-typed-text="适配器模式"></span>
           
         </div>
 
@@ -314,8 +314,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-09-07 23:31" pubdate>
-          2026年9月7日 晚上
+        <time datetime="2026-09-12 15:26" pubdate>
+          2026年9月12日 下午
         </time>
       </span>
     
@@ -326,7 +326,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.7k 字
+          1.6k 字
         
       </span>
     
@@ -337,7 +337,7 @@
         
         
         
-          23 分钟
+          14 分钟
         
       </span>
     
@@ -376,28 +376,30 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">外观模式</h1>
+            <h1 id="seo-header">适配器模式</h1>
             
             
               <div class="markdown-body">
                 
-                <p>外观模式：结构型设计模式。它为子系统中的一组接口提供一个统一的高层接口，使得子系统更容易使用。<br>外观模式通过创建一个“门面”类，将客户端与复杂的子系统解耦，客户端只需要与门面交互，而不需要了解子系统内部的复杂细节。</p>
-<h3 id="使用外观模式的好处"><a href="#使用外观模式的好处" class="headerlink" title="使用外观模式的好处"></a>使用外观模式的好处</h3><p>分层隔离，实现解耦：上层只需要调用“门面”类中的方法，不关注底下子系统的实现，而“门面”类方法负责调用不同的子系统方法实现功能。上层只依赖门面类，不直接依赖子系统，减少依赖的数量。<br>外观模式完美地体现了迪米特法则和封装的思想，所以是非常常用的模式之一。</p>
-<h3 id="什么情况适合使用外观模式"><a href="#什么情况适合使用外观模式" class="headerlink" title="什么情况适合使用外观模式"></a>什么情况适合使用外观模式</h3><ol>
-<li>在开发阶段，子系统往往因为不断的重构演化而变得越来越复杂，大多数的模式使用时也都会产生很多很小的类，这本是好事，但也给外部调用它们的用户程序带来了使用上的困难，增加外观Facade可以提供一个简单的接口，减少它们之间的依赖。 </li>
-<li>在维护一个遗留的大型系统时，可能这个系统已经非常难以维护和扩展了，但因为它包含非常重要的功能，新的需求开发必须要依赖于它。此时用外观模式Facade也是非常合适的。你可以为新系统开发一个外观Facade类，来提供设计粗糙或高度复杂的遗留代码的比较清晰简单的接口，让新系统与Facade对象交互，Facade与遗留代码交互所有复杂的工作。</li>
+                <p>结构性设计模式。将一个类的接口转换为客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。<br><strong>适配器模式解决的问题</strong><br>需要的东西就在面前，但却不能使用，而短时间又无法改造它，所以想办法适配它。<br>在软件开发中，系统的数据和行为都正确，但接口不符时，考虑使用适配器模式。目的是使控制范围之外的一个原有对象与某一接口匹配。<br>适配器模式主要应用于希望复用一些现存的类，但是接口又与复用环境要求不一致的情况。<br>如果使用一个已经存在的类，但是它的接口，也就是方法和客户端的要求不相同，使用适配器模式。<br><strong>在实际开发中，适配器模式并不是优先考虑使用，而是没有办法才使用适配器</strong><br>公司内部，类和方法的命名应该有规范，最好前期就设计好，然后如果接口不相同时，首先不应该考虑用适配器，而是应该考虑通过重构统一接口。<br>在双方都不太容易修改的时候再使用适配器模式适配，而不是一有不同时就使用它。<br>Java一般使用对象适配器模式。</p>
+<h3 id="适配器模式组成角色"><a href="#适配器模式组成角色" class="headerlink" title="适配器模式组成角色"></a>适配器模式组成角色</h3><ol>
+<li>Target目标接口：客户端期望的统一接口</li>
+<li>Adaptee被适配者：已有但接口不兼容的类，比如旧系统、第三方SDK。</li>
+<li>Adapter适配器：实现Target，内部调用Adaptee，并做参数&#x2F;返回值转换。</li>
+<li>Client客户端：只依赖Target，不关心具体Adaptee。<br>就是开发需求，软件维护，系统设计者定义客户端期望的 <strong>Target 目标接口</strong>，包括期望的方法和返回值。但是这个功能之前已经实现过，不能写重复的代码，但是由于历史问题又无法对原有的旧接口进行改造。所以创建一个适配类继承&#x2F;实现目标接口，成员变量是被适配者。在目标方法中，改造参数调用被适配者的方法，然后返回参数进行处理，符合客户端要求的返回值。<br>从始至终，客户端不care或者接触不到旧接口，只调用目标接口的方法。</li>
 </ol>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>假设我们有一套家庭影院设备，包括：投影仪（Projector）、音响（Amplifier）、DVD 播放器（DvdPlayer）、灯光（Lights）、屏幕（Screen）。<br>要观看一部电影，我们需要依次执行以下操作： 1. 打开投影仪 2. 打开音响 3. 打开 DVD 播放器 4. 放下屏幕 5. 调暗灯光 6. 播放 DVD。<br>如果不用外观模式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;  <br>        <span class="hljs-type">Projector</span> <span class="hljs-variable">projector</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Projector</span>();  <br>        <span class="hljs-type">Amplifier</span> <span class="hljs-variable">amplifier</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Amplifier</span>();  <br>        <span class="hljs-type">DvdPlayer</span> <span class="hljs-variable">dvdPlayer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DvdPlayer</span>();  <br>        <span class="hljs-type">Lights</span> <span class="hljs-variable">lights</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Lights</span>();  <br>        <span class="hljs-type">Screen</span> <span class="hljs-variable">screen</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Screen</span>();  <br>        projector.on();  <br>        amplifier.on();  <br>        dvdPlayer.on();  <br>        screen.down();  <br>        lights.dim(<span class="hljs-number">10</span>);  <br>        dvdPlayer.play(<span class="hljs-string">&quot;电影名称&quot;</span>);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>客户端直接使用所有的设备，与不同的设备进行交互。<br>创建一个门面类屏蔽细节:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HomeTheaterFacade</span> &#123;  <br>    <span class="hljs-keyword">private</span> Projector projector;  <br>    <span class="hljs-keyword">private</span> Amplifier amplifier;  <br>    <span class="hljs-keyword">private</span> DvdPlayer dvdPlayer;  <br>    <span class="hljs-keyword">private</span> Lights lights;  <br>    <span class="hljs-keyword">private</span> Screen screen;  <br>  <br>    <span class="hljs-type">public</span> <span class="hljs-title function_">HomeTheaterFacade</span><span class="hljs-params">(Projector projector, Amplifier amplifier, DvdPlayer dvdPlayer, Lights lights, Screen screen)</span> &#123;  <br>        <span class="hljs-built_in">this</span>.projector = projector;  <br>        <span class="hljs-built_in">this</span>.amplifier = amplifier;  <br>        <span class="hljs-built_in">this</span>.dvdPlayer = dvdPlayer;  <br>        <span class="hljs-built_in">this</span>.lights = lights;  <br>        <span class="hljs-built_in">this</span>.screen = screen;  <br>    &#125;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">watchMovie</span><span class="hljs-params">(String movie)</span> &#123;  <br>        System.out.println(<span class="hljs-string">&quot;准备观看电影...&quot;</span>);  <br>        projector.on();  <br>        amplifier.on();  <br>        dvdPlayer.on();  <br>        screen.down();  <br>        lights.dim(<span class="hljs-number">10</span>);  <br>        dvdPlayer.play(movie);  <br>    &#125;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">endMovie</span><span class="hljs-params">()</span> &#123;  <br>        System.out.println(<span class="hljs-string">&quot;关闭家庭影院...&quot;</span>);  <br>        dvdPlayer.stop();  <br>        dvdPlayer.off();  <br>        screen.up();  <br>        lights.on();  <br>        projector.off();  <br>        amplifier.off();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>客户端代码变为</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;  <br>        <span class="hljs-type">Projector</span> <span class="hljs-variable">projector</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Projector</span>();  <br>        <span class="hljs-type">Amplifier</span> <span class="hljs-variable">amplifier</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Amplifier</span>();  <br>        <span class="hljs-type">DvdPlayer</span> <span class="hljs-variable">dvdPlayer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DvdPlayer</span>();  <br>        <span class="hljs-type">Lights</span> <span class="hljs-variable">lights</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Lights</span>();  <br>        <span class="hljs-type">Screen</span> <span class="hljs-variable">screen</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Screen</span>();  <br>        <span class="hljs-type">HomeTheaterFacade</span> <span class="hljs-variable">homeTheater</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HomeTheaterFacade</span>(projector, amplifier, dvdPlayer, lights, screen);  <br>        homeTheater.watchMovie(<span class="hljs-string">&quot;流浪地球&quot;</span>);  <br>        homeTheater.endMovie();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>在实际的 Java 开发中，分层架构（如 MVC、DDD）的层与层之间经常使用外观模式的思想，每一层通过统一的接口（如 Service 类）对上层提供服务，隐藏内部实现细节。 可以看到系统更有层次，客户端-门面类-子系统。耦合度比较低，同时符合迪米特法则（最少知识原则），因为客户端的直接朋友只有门面类，而不是许多子系统。</p>
-<h3 id="外观模式的坏处"><a href="#外观模式的坏处" class="headerlink" title="外观模式的坏处"></a>外观模式的坏处</h3><ol>
-<li>可能成为“上帝对象”：如果门面类承担了过多的职责，把所有子系统的功能都集中到自己身上，会导致门面类变得庞大且难以维护，违背单一职责原则。 </li>
-<li>可能隐藏重要功能：门面提供了一个简化的接口，但有些客户端可能需要访问子系统的更细粒度功能。如果门面没有提供相应的方法，客户端可能无法直接使用这些功能，除非绕过门面直接访问子系统（这会破坏外观模式的设计初衷）。</li>
-<li>可能违反开闭原则：如果门面类需要随着子系统的变化而频繁修改，那么它可能会成为修改的集中点，增加维护成本。</li>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>目标类：新需求&#x2F;客户端要求</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 用户期望的类/接口</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Target</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">request</span><span class="hljs-params">()</span> &#123;  <br>        System.out.println(<span class="hljs-string">&quot;普通请求&quot;</span>);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>被适配者：因为历史原因或者不可抗力，无法进行改造的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 需求适配的类</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Adaptee</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">specificRequest</span><span class="hljs-params">()</span> &#123;  <br>        System.out.println(<span class="hljs-string">&quot;特殊请求&quot;</span>);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>适配类：继承目标类，完成适配，供客户端调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 适配器</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Adapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Target</span> &#123;  <br>  <br>    <span class="hljs-comment">// 需要适配的类  </span><br>    <span class="hljs-type">Adaptee</span> <span class="hljs-variable">adaptee</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Adaptee</span>();  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">request</span><span class="hljs-params">()</span> &#123;  <br>        adaptee.specificRequest();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>客户端：调用目标类方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 客户端</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> &#123;  <br>    <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-comment">// 客户端期望的类 通过适配器实现，适配器方法中调用原始类方法  </span><br>        <span class="hljs-type">Target</span> <span class="hljs-variable">target</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Adapter</span>();  <br>        <span class="hljs-comment">// 对客户端无感，使用就是目标类方法  </span><br>        target.request();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="什么情况下使用适配器"><a href="#什么情况下使用适配器" class="headerlink" title="什么情况下使用适配器"></a>什么情况下使用适配器</h3><ol>
+<li>集成第三方SDK或遗留系统，第三方接口和你系统的接口不一致，又不能修改第三方代码。</li>
+<li>不想或不能修改旧代码：旧代码还在用，直接改风险大，可以用适配器包一层。</li>
+<li>隔离外部依赖：业务代码不要到处直接调用第三方 API，而是依赖自己定义的接口。<br><strong>适配器模式就是给不兼容的接口加一个“翻译插头”，让客户端只依赖统一接口；不用它，调用方就会被各种第三方接口、参数转换和条件判断绑死。</strong></li>
 </ol>
 
                 
@@ -423,8 +425,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>外观模式</div>
-      <div>https://hzsup.github.io/2026/09/07/外观模式/</div>
+      <div>适配器模式</div>
+      <div>https://hzsup.github.io/2026/09/12/适配器模式/</div>
     </div>
     <div class="license-meta">
       
@@ -436,7 +438,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年9月7日</div>
+          <div>2026年9月12日</div>
         </div>
       
       
@@ -468,18 +470,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/09/12/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" title="适配器模式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">适配器模式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/09/06/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="策略模式">
-                        <span class="hidden-mobile">策略模式</span>
+                      <a href="/2026/09/07/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" title="外观模式">
+                        <span class="hidden-mobile">外观模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
