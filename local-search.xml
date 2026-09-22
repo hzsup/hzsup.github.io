@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>UML类图</title>
+    <link href="/2026/09/22/UML%E7%B1%BB%E5%9B%BE/"/>
+    <url>/2026/09/22/UML%E7%B1%BB%E5%9B%BE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="类与接口"><a href="#类与接口" class="headerlink" title="类与接口"></a>类与接口</h1><p>类和接口在UML类图中使用矩形框表示。</p><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>第一行：类名：如果是抽象类，类名使用斜体。<br>第二行：成员变量，静态成员使用下划线。<br>第三行：类中方法，抽象方法用斜体。<br>成员变量和类中方法前面：<code>+</code>代表<code>public</code>，<code>#</code>代表<code>protected</code>，<code>-</code>代表<code>private</code>。</p><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口名上方标《interface》。其他和类基本相同<br>可以使用棒棒糖表示法实现接口。</p><h1 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h1><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>子类继承父类，使用空心三角形+实线，三角形指向父类。如图中鸟继承动物类。</p><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>类实现接口：</p><ol><li>空心三角形+虚线，三角形指向接口</li><li>棒棒糖表示法</li></ol><h3 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h3><p>表示一个类中引用另一个类，“知道”另一个类。<br>关联通常对应代码中的成员变量，是较长期的结构关系。<br>使用实线箭头表示。箭头指向被引用的类。</p><h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p>聚合表示一种弱的“拥有”关系，表示A对象可以包含B对象，但是B对象不是A对象的一部分。<br>类似于大雁和雁群，大雁是群聚动物，每个大雁属于一个雁群，雁群中有多只大雁。<br>使用空心菱形+实线箭头表示。</p><h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p>一种强的“拥有”关系，体现了严格的部分和整体的关系，部分和整体的生命周期是一样的。<br>例如一只鸟都用两个翅膀，就是组合的关系，生命周期一致的。<br>使用实心菱形+实线箭头表示。<br>组合、聚合、关联两端可以有数字表示，表明一端类有几个实例。一个鸟有两个翅膀。如果有无数个，比如雁群和大雁，大雁侧使用n表示。</p><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>一个类需要另一个类，比如动物需要氧气和水。体现在构造方法中，创建一个动物类，构造方法参数需要传入氧气和水。<br>使用虚线箭头表示。<br>依赖是临时、较弱的关系；关联通常是成员变量，关系更持久。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>设计模式</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>简单工厂</title>
     <link href="/2026/09/21/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82/"/>
     <url>/2026/09/21/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82/</url>

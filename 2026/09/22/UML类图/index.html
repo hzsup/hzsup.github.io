@@ -19,22 +19,22 @@
   <meta name="author" content="Han Zisen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="如何理解面向对象我们在开发实现需求或者解决问题的时候，直觉是解决这个问题，给出一步一步具体的解决方案，而这个思考的过程本质上就是面向过程去解决问题。比如实现一个计算器功能，输入：两个数字、运算符输出：计算得到的结果我很容易写出这样的代码： 1234567891011121314151617181920212223242526272829public class Calculator &#123;">
+    <meta name="description" content="类与接口类和接口在UML类图中使用矩形框表示。 类第一行：类名：如果是抽象类，类名使用斜体。第二行：成员变量，静态成员使用下划线。第三行：类中方法，抽象方法用斜体。成员变量和类中方法前面：+代表public，#代表protected，-代表private。 接口接口名上方标《interface》。其他和类基本相同可以使用棒棒糖表示法实现接口。 关系继承子类继承父类，使用空心三角形+实线，三角形指向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单工厂">
-<meta property="og:url" content="https://hzsup.github.io/2026/09/21/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82/index.html">
+<meta property="og:title" content="UML类图">
+<meta property="og:url" content="https://hzsup.github.io/2026/09/22/UML%E7%B1%BB%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="如何理解面向对象我们在开发实现需求或者解决问题的时候，直觉是解决这个问题，给出一步一步具体的解决方案，而这个思考的过程本质上就是面向过程去解决问题。比如实现一个计算器功能，输入：两个数字、运算符输出：计算得到的结果我很容易写出这样的代码： 1234567891011121314151617181920212223242526272829public class Calculator &#123;">
+<meta property="og:description" content="类与接口类和接口在UML类图中使用矩形框表示。 类第一行：类名：如果是抽象类，类名使用斜体。第二行：成员变量，静态成员使用下划线。第三行：类中方法，抽象方法用斜体。成员变量和类中方法前面：+代表public，#代表protected，-代表private。 接口接口名上方标《interface》。其他和类基本相同可以使用棒棒糖表示法实现接口。 关系继承子类继承父类，使用空心三角形+实线，三角形指向">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-09-21T15:40:36.000Z">
-<meta property="article:modified_time" content="2026-09-21T15:41:43.652Z">
+<meta property="article:published_time" content="2026-09-22T15:12:42.000Z">
+<meta property="article:modified_time" content="2026-09-22T15:14:37.275Z">
 <meta property="article:author" content="Han Zisen">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>简单工厂 - Hexo</title>
+  <title>UML类图 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +303,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="简单工厂"></span>
+            <span id="subtitle" data-typed-text="UML类图"></span>
           
         </div>
 
@@ -314,8 +314,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-09-21 23:40" pubdate>
-          2026年9月21日 晚上
+        <time datetime="2026-09-22 23:12" pubdate>
+          2026年9月22日 晚上
         </time>
       </span>
     
@@ -326,7 +326,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          643 字
         
       </span>
     
@@ -337,7 +337,7 @@
         
         
         
-          28 分钟
+          6 分钟
         
       </span>
     
@@ -376,53 +376,24 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">简单工厂</h1>
+            <h1 id="seo-header">UML类图</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="如何理解面向对象"><a href="#如何理解面向对象" class="headerlink" title="如何理解面向对象"></a>如何理解面向对象</h1><p>我们在开发实现需求或者解决问题的时候，直觉是解决这个问题，给出一步一步具体的解决方案，而这个思考的过程本质上就是面向过程去解决问题。<br>比如实现一个计算器功能，<br>输入：两个数字、运算符<br>输出：计算得到的结果<br>我很容易写出这样的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculator</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;  <br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">num1</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">num2</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br>        <span class="hljs-type">String</span> <span class="hljs-variable">operator</span> <span class="hljs-operator">=</span> scanner.next();  <br>        <span class="hljs-type">double</span> ans;  <br>        <span class="hljs-keyword">switch</span> (operator) &#123;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span>:  <br>                ans = num1 + num2;  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>:  <br>                ans = num1 - num2;  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>:  <br>                ans = num1 * num2;  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:  <br>                <span class="hljs-keyword">if</span> (num2 == <span class="hljs-number">0</span>) &#123;  <br>                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>();  <br>                &#125;  <br>                ans = num1 / num2;  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">default</span>:  <br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>();  <br>        &#125;  <br>        System.out.println(ans);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>这个程序确实解决了问题，得到正确的结果。命名规范，使用<code>switch-case</code>减少必要的判断。<br>但是本质上是面向过程解决问题，程序在设计上做不到<strong>可维护、可扩展、可复用、灵活性</strong>。</p>
+                <h1 id="类与接口"><a href="#类与接口" class="headerlink" title="类与接口"></a>类与接口</h1><p>类和接口在UML类图中使用矩形框表示。</p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>第一行：类名：如果是抽象类，类名使用斜体。<br>第二行：成员变量，静态成员使用下划线。<br>第三行：类中方法，抽象方法用斜体。<br>成员变量和类中方法前面：<code>+</code>代表<code>public</code>，<code>#</code>代表<code>protected</code>，<code>-</code>代表<code>private</code>。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口名上方标《interface》。其他和类基本相同<br>可以使用棒棒糖表示法实现接口。</p>
+<h1 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h1><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>子类继承父类，使用空心三角形+实线，三角形指向父类。如图中鸟继承动物类。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>类实现接口：</p>
 <ol>
-<li>可维护：<strong>做不到只修改要修改的地方</strong>。这个程序如果要修改加法的算法，在前后打印一些信息。但是修改之后整个类会被重新编译，也就是剩下的减法、乘法、除法内容也会被重新编译。当算法逻辑复杂，如果我不小心修改了其他地方程序就会出问题。难以把变更影响限制在局部。</li>
-<li>可扩展：<strong>做不到新加功能不影响原来的功能</strong>。如果新加一种计算运算符，但是要在大类里面进行修改，重新编译，也可能会影响原来的功能。</li>
-<li>可复用：<strong>每个子算法不能被其他类&#x2F;对象使用</strong>。</li>
-<li>灵活性：<strong>算法和判断逻辑之间耦合密切，逻辑写死，做不到灵活替换</strong>。</li>
+<li>空心三角形+虚线，三角形指向接口</li>
+<li>棒棒糖表示法</li>
 </ol>
-<h2 id="面向对象解决问题"><a href="#面向对象解决问题" class="headerlink" title="面向对象解决问题"></a>面向对象解决问题</h2><p>面向对象的三大特性：封装、继承、多态。<br>使用面向对象的思想，我们需要从以下角度改造程序：</p>
-<ol>
-<li>将计算和显示<strong>解耦合</strong>：当前类即包含输入输出和计算两个功能，我希望计算可以单独拿出来，变为计算类。这样计算类只负责计算，得到结果，客户端负责获取输入，然后调用计算类方法得到结果，然后处理结果就可以。</li>
-<li>计算方法变得<strong>可维护、可复用、可扩展</strong>。当前计算类，逻辑是写死的，希望每一个子算法单独拆分，然后单独维护，做到可维护和可复用。并且增加新功能时，改动点尽可能小。<br>首先，定义一个计算接口，定义抽象计算方法。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Operator</span> &#123;  <br>    <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> num1, <span class="hljs-type">double</span> num2)</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>加减乘除分别实现计算接口。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AddOperator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Operator</span>&#123;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> num1, <span class="hljs-type">double</span> num2)</span> &#123;  <br>        <span class="hljs-keyword">return</span> num1 + num2;  <br>    &#125;  <br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DivOperator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Operator</span>&#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculate</span><span class="hljs-params">(<span class="hljs-type">double</span> num1, <span class="hljs-type">double</span> num2)</span> &#123;  <br>        <span class="hljs-keyword">if</span> (num2 == <span class="hljs-number">0</span>) &#123;  <br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;除数不能为零&quot;</span>);  <br>        &#125;  <br>        <span class="hljs-keyword">return</span> num1 / num2;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>这时候，需要一个类，根据调用方（客户端）传入的参数来决定创建哪一种具体运算法的实例，因此创建一个简单工厂类，工厂类实现一个根据传入参数获取具体实例的方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculatorFactory</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Operator</span> <span class="hljs-title function_">getOperator</span><span class="hljs-params">(String op)</span> &#123;  <br>        Operator ans;  <br>        <span class="hljs-keyword">switch</span> (op) &#123;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;+&quot;</span>:  <br>                ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AddOperator</span>();  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;-&quot;</span>:  <br>                ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubOperator</span>();  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;*&quot;</span>:  <br>                ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MulOperator</span>();  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:  <br>                ans = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DivOperator</span>();  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">default</span>:  <br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>();  <br>        &#125;  <br>        <span class="hljs-keyword">return</span> ans;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>此时，客户端的调用变得简单，获取输入，从工厂类获取具体计算实例，然后得到结果，展示结果即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> &#123;  <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;  <br>        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">num1</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">num2</span> <span class="hljs-operator">=</span> scanner.nextDouble();  <br>        <span class="hljs-type">String</span> <span class="hljs-variable">op</span> <span class="hljs-operator">=</span> scanner.next();  <br>        <span class="hljs-type">Operator</span> <span class="hljs-variable">operator</span> <span class="hljs-operator">=</span> CalculatorFactory.getOperator(op);  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> operator.calculate(num1, num2);  <br>        System.out.println(ans);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>这样做，客户端职责变得单一：</p>
-<ol>
-<li>客户端只依赖抽象接口和工厂，而不依赖具体产品类。将当前产品的创建逻辑统一进行管理</li>
-<li>修改的话只需要修改工厂，同时客户端不用关心代码是怎么创建的</li>
-</ol>
-<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>提供一个工厂类，根据调用方传入的参数来决定创建哪一种具体产品类的实例。通常具体的产品类都会继承或者实现同一个抽象类或接口。<br>简单工厂通常包括三部分：</p>
-<ol>
-<li>产品接口&#x2F;抽象类：定义了产品的规范、行为（定义的计算接口）。</li>
-<li>具体产品：工厂的所有具体产品都应该继承或者实现抽象类或接口（具体的计算实现类）。</li>
-<li>产品工厂：根据传入的参数返回对应的具体产品（工厂类）。</li>
-</ol>
-<h2 id="简单工厂模式优缺点"><a href="#简单工厂模式优缺点" class="headerlink" title="简单工厂模式优缺点"></a>简单工厂模式优缺点</h2><p>实现了可维护和可复用。修改加法算法，只需要修改加法计算类就行，其他类不会受到影响。同时加法类实现了封装，对外可复用。<br>但是工厂和产品的<strong>解耦并不彻底，可扩展性不足</strong>。</p>
-<ol>
-<li>工厂类必须依赖所有的具体产品类，当产品类发生变化时，工厂类也要跟着变化。新增一个具体产品或者修改产品的构造方法，工厂类也要跟着进行变化。违反了开闭原则。</li>
-<li>如果创建产品的流程比较复杂，需要读取配置、连接数据库、加载资源等，整个工厂类变得十分臃肿，容易变为上帝类。</li>
-</ol>
-<h2 id="什么时候使用简单工厂模式"><a href="#什么时候使用简单工厂模式" class="headerlink" title="什么时候使用简单工厂模式"></a>什么时候使用简单工厂模式</h2><ol>
-<li>产品类型相对较少，并且比较稳定。</li>
-<li>多处需要创建同一产品对象，需要进行统一管理。</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简单工厂模式通过引入工厂类，<strong>将客户端与具体产品类解耦</strong>，使客户端不再关心对象的创建细节，提升了代码的灵活性和可维护性。<br>但它<strong>并没有完全消除耦合</strong>，只是将耦合转移到了工厂类内部。当产品种类增多时，工厂类需要不断修改，违反开闭原则。因此，简单工厂模式适用于<strong>产品种类较少且相对稳定</strong>的场景。</p>
+<h3 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h3><p>表示一个类中引用另一个类，“知道”另一个类。<br>关联通常对应代码中的成员变量，是较长期的结构关系。<br>使用实线箭头表示。箭头指向被引用的类。</p>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p>聚合表示一种弱的“拥有”关系，表示A对象可以包含B对象，但是B对象不是A对象的一部分。<br>类似于大雁和雁群，大雁是群聚动物，每个大雁属于一个雁群，雁群中有多只大雁。<br>使用空心菱形+实线箭头表示。</p>
+<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p>一种强的“拥有”关系，体现了严格的部分和整体的关系，部分和整体的生命周期是一样的。<br>例如一只鸟都用两个翅膀，就是组合的关系，生命周期一致的。<br>使用实心菱形+实线箭头表示。<br>组合、聚合、关联两端可以有数字表示，表明一端类有几个实例。一个鸟有两个翅膀。如果有无数个，比如雁群和大雁，大雁侧使用n表示。</p>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><p>一个类需要另一个类，比如动物需要氧气和水。体现在构造方法中，创建一个动物类，构造方法参数需要传入氧气和水。<br>使用虚线箭头表示。<br>依赖是临时、较弱的关系；关联通常是成员变量，关系更持久。</p>
 
                 
               </div>
@@ -447,8 +418,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>简单工厂</div>
-      <div>https://hzsup.github.io/2026/09/21/简单工厂/</div>
+      <div>UML类图</div>
+      <div>https://hzsup.github.io/2026/09/22/UML类图/</div>
     </div>
     <div class="license-meta">
       
@@ -460,7 +431,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年9月21日</div>
+          <div>2026年9月22日</div>
         </div>
       
       
@@ -492,18 +463,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/09/22/UML%E7%B1%BB%E5%9B%BE/" title="UML类图">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">UML类图</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/09/13/%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99/" title="依赖倒置原则">
-                        <span class="hidden-mobile">依赖倒置原则</span>
+                      <a href="/2026/09/21/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82/" title="简单工厂">
+                        <span class="hidden-mobile">简单工厂</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
