@@ -19,22 +19,22 @@
   <meta name="author" content="Han Zisen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="概念在不改变原类的情况下，动态地给对象添加额外的职责或功能。装饰模式是为已有功能动态地添加更多功能的一种方式。当系统需要新功能的时候，是向旧的类中添加新的代码。这些新加的代码通常装饰了原有类的核心职责或主要行为，但这种做法的问题在于，它们在主类中加入了新的字段，新的方法和新的逻辑，从而增加了主类的复杂度，而这些新加入的东西仅仅是为了满足一些只在某种特定情况下才会执行的特殊行为的需要。 而装饰模式却">
+    <meta name="description" content="概念对其他对象提供一种代理，以控制对这个对象的访问。代理模式分为静态代理和动态代理两种实现方式。静态代理是代理类在编译期已经存在，一般是手写的。动态代理是代理类在运行期通过JDK、CGLIB等框架生成字节码并加载，动态生成的。JDK 动态代理基于接口，CGLIB 基于继承。代理模式可以用在：  远程代理：代理远程对象，如 RPC。 虚拟代理：延迟创建大对象，比如图片懒加载。 保护代理：控制访问权限">
 <meta property="og:type" content="article">
-<meta property="og:title" content="装饰模式">
-<meta property="og:url" content="https://hzsup.github.io/2026/10/02/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="代理模式">
+<meta property="og:url" content="https://hzsup.github.io/2026/10/02/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="概念在不改变原类的情况下，动态地给对象添加额外的职责或功能。装饰模式是为已有功能动态地添加更多功能的一种方式。当系统需要新功能的时候，是向旧的类中添加新的代码。这些新加的代码通常装饰了原有类的核心职责或主要行为，但这种做法的问题在于，它们在主类中加入了新的字段，新的方法和新的逻辑，从而增加了主类的复杂度，而这些新加入的东西仅仅是为了满足一些只在某种特定情况下才会执行的特殊行为的需要。 而装饰模式却">
+<meta property="og:description" content="概念对其他对象提供一种代理，以控制对这个对象的访问。代理模式分为静态代理和动态代理两种实现方式。静态代理是代理类在编译期已经存在，一般是手写的。动态代理是代理类在运行期通过JDK、CGLIB等框架生成字节码并加载，动态生成的。JDK 动态代理基于接口，CGLIB 基于继承。代理模式可以用在：  远程代理：代理远程对象，如 RPC。 虚拟代理：延迟创建大对象，比如图片懒加载。 保护代理：控制访问权限">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-10-02T07:41:29.000Z">
-<meta property="article:modified_time" content="2026-10-02T07:42:06.365Z">
+<meta property="article:published_time" content="2026-10-02T09:34:39.000Z">
+<meta property="article:modified_time" content="2026-10-02T09:34:58.315Z">
 <meta property="article:author" content="Han Zisen">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>装饰模式 - Hexo</title>
+  <title>代理模式 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +303,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="装饰模式"></span>
+            <span id="subtitle" data-typed-text="代理模式"></span>
           
         </div>
 
@@ -314,7 +314,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-10-02 15:41" pubdate>
+        <time datetime="2026-10-02 17:34" pubdate>
           2026年10月2日 下午
         </time>
       </span>
@@ -326,7 +326,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.1k 字
+          1.6k 字
         
       </span>
     
@@ -337,7 +337,7 @@
         
         
         
-          27 分钟
+          14 分钟
         
       </span>
     
@@ -376,36 +376,38 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">装饰模式</h1>
+            <h1 id="seo-header">代理模式</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>在不改变原类的情况下，动态地给对象添加额外的职责或功能。<br>装饰模式是为已有功能动态地添加更多功能的一种方式。<br>当系统需要新功能的时候，是向旧的类中添加新的代码。这些新加的代码通常装饰了原有类的核心职责或主要行为，但这种做法的问题在于，它们在主类中加入了新的字段，新的方法和新的逻辑，从而增加了主类的复杂度，而这些新加入的东西仅仅是为了满足一些只在某种特定情况下才会执行的特殊行为的需要。 而装饰模式却提供了一个非常好的解决方案，它把每个要装饰的功能放在单独的类中，并让这个类包装它所要装饰的对象，因此，当需要执行特殊行为时，客户代码就可以在运行时根据需要有选择地、按顺序地使用装饰功能包装对象了。 </p>
-<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><p>修饰模式包括四部分： </p>
+                <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>对其他对象提供一种代理，以控制对这个对象的访问。<br>代理模式分为静态代理和动态代理两种实现方式。<br>静态代理是代理类在编译期已经存在，一般是手写的。<br>动态代理是代理类在运行期通过JDK、CGLIB等框架生成字节码并加载，动态生成的。JDK 动态代理基于接口，CGLIB 基于继承。<br>代理模式可以用在：</p>
 <ul>
-<li><code>Component</code>：定义行为的统一接口，定义被修饰对象的主要功能行为</li>
-<li><code>ConcreteComponent</code>：具体对象，实现<code>Component</code>接口，一般为被修饰的对象</li>
-<li><code>Decorator</code>：抽象装饰类，实现<code>Component</code>接口，内部持有一个被修饰对象</li>
-<li><code>ConcreteDecorator</code>：具体修饰者，继承<code>Decorator</code>抽象装饰类，在调用原对象方法前后添加功能</li>
+<li><strong>远程代理</strong>：代理远程对象，如 RPC。</li>
+<li><strong>虚拟代理</strong>：延迟创建大对象，比如图片懒加载。</li>
+<li><strong>保护代理</strong>：控制访问权限。</li>
+<li><strong>日志代理</strong>：记录方法调用。</li>
+<li><strong>智能引用代理</strong>：记录对象引用次数，类似智能指针。</li>
 </ul>
-<h2 id="改造商场收费系统"><a href="#改造商场收费系统" class="headerlink" title="改造商场收费系统"></a>改造商场收费系统</h2><p>之前使用策略模式+简单工厂实现计算折扣功能。<br>如果需要实现新的折扣方法，比如先打8折，然后满300送100，或者先进行满减，然后打折。<br>可以把这个功能当做一个新的折扣算法，实现Cash接口。 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RebateReturnCash</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Cash</span> &#123;  <br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> rebate;  <br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> priceCondition;  <br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> priceReturn;  <br>  <br>    <span class="hljs-type">public</span> <span class="hljs-title function_">RebateReturnCash</span><span class="hljs-params">(<span class="hljs-type">double</span> rebate, <span class="hljs-type">int</span> priceCondition, <span class="hljs-type">int</span> priceReturn)</span> &#123;  <br>        <span class="hljs-built_in">this</span>.rebate = rebate;  <br>        <span class="hljs-built_in">this</span>.priceCondition = priceCondition;  <br>        <span class="hljs-built_in">this</span>.priceReturn = priceReturn;  <br>    &#125;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculatePrice</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">rebatePrice</span> <span class="hljs-operator">=</span> price * rebate;  <br>        <span class="hljs-keyword">if</span> (rebatePrice &gt;= priceCondition) &#123;  <br>            <span class="hljs-keyword">return</span> rebatePrice - Math.floor(rebatePrice / priceCondition) * priceReturn;  <br>        &#125;  <br>        <span class="hljs-keyword">return</span> rebatePrice;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>但是这样存在问题：如果之后需求进一步提升，比如先打折，然后满减，然后送积分，送优惠券。每新增一个不同算法，代码逻辑都要重新编写。并且，重复代码很多，打折，满减，每一个子算法逻辑是一样的，应该考虑复用。 因此尽可能只实现基础的子算法，然后进行组合方式实现新的需求。 </p>
-<h3 id="装饰模式改造"><a href="#装饰模式改造" class="headerlink" title="装饰模式改造"></a>装饰模式改造</h3><p>创建一个装饰抽象类，实现公共接口<code>Cash</code>。 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CashDecorator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Cash</span> &#123;  <br>    <span class="hljs-keyword">private</span> Cash component;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">decorate</span><span class="hljs-params">(Cash component)</span> &#123;  <br>        <span class="hljs-built_in">this</span>.component = component;  <br>    &#125;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculatePrice</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;  <br>        <span class="hljs-keyword">if</span> (component != <span class="hljs-literal">null</span>) &#123;  <br>            <span class="hljs-keyword">return</span> component.calculatePrice(price);  <br>        &#125;  <br>        <span class="hljs-keyword">return</span> price;  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>打折和满减类都继承装饰抽象类。<br>打折类 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RebateCash</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">CashDecorator</span> &#123;  <br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> rebate;  <br>  <br>    <span class="hljs-type">public</span> <span class="hljs-title function_">RebateCash</span><span class="hljs-params">(<span class="hljs-type">double</span> rebate)</span> &#123;  <br>        <span class="hljs-built_in">this</span>.rebate = rebate;  <br>    &#125;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculatePrice</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> price * rebate; <br>        <span class="hljs-comment">// 继续执行其他的折扣方法  </span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.calculatePrice(result);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>满减类 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ReturnCash</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">CashDecorator</span> &#123;  <br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> priceCondition;  <br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> priceReturn;  <br>  <br>    <span class="hljs-type">public</span> <span class="hljs-title function_">ReturnCash</span><span class="hljs-params">(<span class="hljs-type">int</span> priceCondition, <span class="hljs-type">int</span> priceReturn)</span> &#123;  <br>        <span class="hljs-built_in">this</span>.priceCondition = priceCondition;  <br>        <span class="hljs-built_in">this</span>.priceReturn = priceReturn;  <br>    &#125;  <br>  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">calculatePrice</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;  <br>        <span class="hljs-type">double</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> price;  <br>        <span class="hljs-keyword">if</span> (price &gt;= priceCondition) &#123;  <br>            result = price - Math.floor(price / priceCondition) * priceReturn;  <br>        &#125;  <br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.calculatePrice(result);  <br>    &#125;  <br>&#125; <br></code></pre></td></tr></table></figure>
-<p>这样的话策略上下文变为 </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CashStrategyContext</span> &#123;  <br>    <span class="hljs-keyword">private</span> Cash cash;  <br>  <br>    <span class="hljs-type">public</span> <span class="hljs-title function_">CashStrategyContext</span><span class="hljs-params">(<span class="hljs-type">int</span> type)</span> &#123;  <br>        <span class="hljs-keyword">switch</span> (type) &#123;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:  <br>                cash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RebateCash</span>(<span class="hljs-number">0.8</span>);  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:  <br>                cash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RebateCash</span>(<span class="hljs-number">0.5</span>);  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:  <br>                cash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ReturnCash</span>(<span class="hljs-number">300</span>, <span class="hljs-number">50</span>);  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:  <br>                <span class="hljs-type">Cash</span> <span class="hljs-variable">rebateCash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RebateCash</span>(<span class="hljs-number">0.8</span>);  <br>                <span class="hljs-type">CashDecorator</span> <span class="hljs-variable">returnCash</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ReturnCash</span>(<span class="hljs-number">300</span>, <span class="hljs-number">100</span>);  <br>                returnCash.decorate(rebateCash);  <br>                cash = returnCash;  <br>                <span class="hljs-keyword">break</span>;  <br>            <span class="hljs-keyword">default</span>:  <br>                cash = <span class="hljs-keyword">new</span> <span class="hljs-title class_">NormalCash</span>();  <br>        &#125;  <br>    &#125;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">getPriceResult</span><span class="hljs-params">(<span class="hljs-type">double</span> price)</span> &#123;  <br>        <span class="hljs-keyword">return</span> cash.calculatePrice(price);  <br>    &#125;  <br>&#125; <br></code></pre></td></tr></table></figure>
-<p>这样消除了重复代码，后续新增先满减后打折算法，直接按照要求修改顺序即可。而不是每一个新的算法都重新实现一遍。 </p>
-<h2 id="为什么使用装饰模式，而不是继承"><a href="#为什么使用装饰模式，而不是继承" class="headerlink" title="为什么使用装饰模式，而不是继承"></a>为什么使用装饰模式，而不是继承</h2><p>就增加功能来说，装饰模式比生成子类更为灵活。 </p>
-<h2 id="装饰模式的好处"><a href="#装饰模式的好处" class="headerlink" title="装饰模式的好处"></a>装饰模式的好处</h2><ol>
-<li>单一职责，方便复用。将类中的装饰功能从类中移除，简化原有的类，把类的核心职责和装饰功能区分开。 </li>
-<li>扩展性好。不同装饰组件之间可叠加，嵌套。整体过程对客户端透明。如果新增装饰组件，继承装饰抽象类，实现对应的功能和调用顺序。</li>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>代理模式一般包含三部分：</p>
+<ul>
+<li><code>Subject</code>接口：声明真实对象对外提供的方法，代理类和真实类都要实现这个接口。</li>
+<li><code>RealSubject</code>真实类：实现<code>Subject</code>接口，实际业务中的动作。</li>
+<li><code>ProxySubject</code>代理类：同样实现<code>Subject</code>接口，内部持<code>Subject</code>引用，实现真实类的访问控制和功能增强。<br>客户端不直接访问真实对象，而是通过代理间接访问。代理和真实对象实现同一个接口，代理内部持有真实对象的引用，可以在调用真实对象前后加入逻辑。</li>
+</ul>
+<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>首先存在一个<code>Subject</code>接口和真实类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-type">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(String name)</span>;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(String name)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;添加用户：&quot;</span> + name);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>手动写一个代理类，实现接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-keyword">private</span> UserService target;<br><br>    <span class="hljs-type">public</span> <span class="hljs-title function_">UserServiceProxy</span><span class="hljs-params">(UserService target)</span> &#123;<br>        <span class="hljs-built_in">this</span>.target = target;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(String name)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;权限校验...&quot;</span>);<br>        target.addUser(name);<br>        System.out.println(<span class="hljs-string">&quot;日志记录...&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>坏处：</p>
+<ol>
+<li>每一个方法都要手写实现。</li>
+<li>部分场景下重复代码很多。比如一个类十个方法都要实现事务的开启和关闭，代码都是一模一样的。或者RPC调用，都是发送网络请求，得到结果。</li>
 </ol>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>通过JDK实现动态代理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">UserService</span> <span class="hljs-variable">proxy</span> <span class="hljs-operator">=</span> (UserService) Proxy.newProxyInstance(<br>            target.getClass().getClassLoader(),<br>            target.getClass().getInterfaces(),<br>            (p, method, methodArgs) -&gt; &#123;<br>                System.out.println(<span class="hljs-string">&quot;前置增强：权限校验&quot;</span>);<br>                <span class="hljs-type">Object</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> method.invoke(target, methodArgs);<br>                System.out.println(<span class="hljs-string">&quot;后置增强：日志记录&quot;</span>);<br>                <span class="hljs-keyword">return</span> result;<br>            &#125;<br>        );<br></code></pre></td></tr></table></figure>
+<h1 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h1><p>开闭性好：新加的代理逻辑不修改之前的类，比如添加事务、监控等功能时，代理类专注对应的逻辑，不用考虑具体的业务逻辑。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>代理模式是在客户端和真实对象之间加一层“中介”，用来控制访问、增强逻辑或隐藏真实对象；装饰模式则是在对象外面套一层“包装”，用来动态叠加功能。</strong></p>
 
                 
               </div>
@@ -430,8 +432,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>装饰模式</div>
-      <div>https://hzsup.github.io/2026/10/02/装饰模式/</div>
+      <div>代理模式</div>
+      <div>https://hzsup.github.io/2026/10/02/代理模式/</div>
     </div>
     <div class="license-meta">
       
@@ -475,18 +477,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/10/02/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代理模式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/09/25/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="策略模式">
-                        <span class="hidden-mobile">策略模式</span>
+                      <a href="/2026/10/02/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" title="装饰模式">
+                        <span class="hidden-mobile">装饰模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
