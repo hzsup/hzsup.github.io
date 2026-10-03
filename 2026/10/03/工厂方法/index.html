@@ -19,22 +19,22 @@
   <meta name="author" content="Han Zisen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="概念对其他对象提供一种代理，以控制对这个对象的访问。代理模式分为静态代理和动态代理两种实现方式。静态代理是代理类在编译期已经存在，一般是手写的。动态代理是代理类在运行期通过JDK、CGLIB等框架生成字节码并加载，动态生成的。JDK 动态代理基于接口，CGLIB 基于继承。代理模式可以用在：  远程代理：代理远程对象，如 RPC。 虚拟代理：延迟创建大对象，比如图片懒加载。 保护代理：控制访问权限">
+    <meta name="description" content="概念定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。和简单工厂的区别：工厂方法是对简单工厂的进一步抽象和推广。在简单工厂中，工厂类和具体的产品交互，在工厂类中把创建产品，然后返回。工厂方法对创建产品对象过程进行抽象，封装实例的创建过程。创建一个统一的工厂接口，工厂都实现这个接口，然后生成自己对应的产品。工厂方法中一般每一个具体工厂对应一个具体产品。 实现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代理模式">
-<meta property="og:url" content="https://hzsup.github.io/2026/10/02/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="工厂方法">
+<meta property="og:url" content="https://hzsup.github.io/2026/10/03/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="概念对其他对象提供一种代理，以控制对这个对象的访问。代理模式分为静态代理和动态代理两种实现方式。静态代理是代理类在编译期已经存在，一般是手写的。动态代理是代理类在运行期通过JDK、CGLIB等框架生成字节码并加载，动态生成的。JDK 动态代理基于接口，CGLIB 基于继承。代理模式可以用在：  远程代理：代理远程对象，如 RPC。 虚拟代理：延迟创建大对象，比如图片懒加载。 保护代理：控制访问权限">
+<meta property="og:description" content="概念定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。和简单工厂的区别：工厂方法是对简单工厂的进一步抽象和推广。在简单工厂中，工厂类和具体的产品交互，在工厂类中把创建产品，然后返回。工厂方法对创建产品对象过程进行抽象，封装实例的创建过程。创建一个统一的工厂接口，工厂都实现这个接口，然后生成自己对应的产品。工厂方法中一般每一个具体工厂对应一个具体产品。 实现">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-10-02T09:34:39.000Z">
-<meta property="article:modified_time" content="2026-10-02T09:34:58.315Z">
+<meta property="article:published_time" content="2026-10-03T09:01:57.000Z">
+<meta property="article:modified_time" content="2026-10-03T09:02:32.485Z">
 <meta property="article:author" content="Han Zisen">
 <meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>代理模式 - Hexo</title>
+  <title>工厂方法 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -303,7 +303,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="代理模式"></span>
+            <span id="subtitle" data-typed-text="工厂方法"></span>
           
         </div>
 
@@ -314,8 +314,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-10-02 17:34" pubdate>
-          2026年10月2日 下午
+        <time datetime="2026-10-03 17:01" pubdate>
+          2026年10月3日 下午
         </time>
       </span>
     
@@ -326,7 +326,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.7k 字
         
       </span>
     
@@ -337,7 +337,7 @@
         
         
         
-          14 分钟
+          15 分钟
         
       </span>
     
@@ -376,38 +376,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">代理模式</h1>
+            <h1 id="seo-header">工厂方法</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>对其他对象提供一种代理，以控制对这个对象的访问。<br>代理模式分为静态代理和动态代理两种实现方式。<br>静态代理是代理类在编译期已经存在，一般是手写的。<br>动态代理是代理类在运行期通过JDK、CGLIB等框架生成字节码并加载，动态生成的。JDK 动态代理基于接口，CGLIB 基于继承。<br>代理模式可以用在：</p>
+                <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。<br><strong>工厂方法使一个类的实例化延迟到其子类。</strong><br>和简单工厂的区别：工厂方法是对简单工厂的进一步抽象和推广。<br>在简单工厂中，工厂类和具体的产品交互，在工厂类中把创建产品，然后返回。工厂方法对创建产品对象过程进行抽象，封装实例的创建过程。创建一个统一的工厂接口，工厂都实现这个接口，然后生成自己对应的产品。<br>工厂方法中一般每一个具体工厂对应一个具体产品。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>工厂方法包括四个部分：</p>
 <ul>
-<li><strong>远程代理</strong>：代理远程对象，如 RPC。</li>
-<li><strong>虚拟代理</strong>：延迟创建大对象，比如图片懒加载。</li>
-<li><strong>保护代理</strong>：控制访问权限。</li>
-<li><strong>日志代理</strong>：记录方法调用。</li>
-<li><strong>智能引用代理</strong>：记录对象引用次数，类似智能指针。</li>
+<li>抽象产品接口<code>Product</code>：定义产品的公共接口。</li>
+<li>具体产品<code>ConcreteProduct</code>：实现抽象产品接口，根据业务给出具体的逻辑。</li>
+<li>抽象工厂接口<code>Creator</code>：定义生产产品的方法。</li>
+<li>具体工厂<code>ConcreteCreator</code>：实现抽象工厂接口，返回具体的产品。</li>
 </ul>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>代理模式一般包含三部分：</p>
-<ul>
-<li><code>Subject</code>接口：声明真实对象对外提供的方法，代理类和真实类都要实现这个接口。</li>
-<li><code>RealSubject</code>真实类：实现<code>Subject</code>接口，实际业务中的动作。</li>
-<li><code>ProxySubject</code>代理类：同样实现<code>Subject</code>接口，内部持<code>Subject</code>引用，实现真实类的访问控制和功能增强。<br>客户端不直接访问真实对象，而是通过代理间接访问。代理和真实对象实现同一个接口，代理内部持有真实对象的引用，可以在调用真实对象前后加入逻辑。</li>
-</ul>
-<h2 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h2><p>首先存在一个<code>Subject</code>接口和真实类。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-type">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(String name)</span>;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(String name)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;添加用户：&quot;</span> + name);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>手动写一个代理类，实现接口。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-keyword">private</span> UserService target;<br><br>    <span class="hljs-type">public</span> <span class="hljs-title function_">UserServiceProxy</span><span class="hljs-params">(UserService target)</span> &#123;<br>        <span class="hljs-built_in">this</span>.target = target;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">addUser</span><span class="hljs-params">(String name)</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;权限校验...&quot;</span>);<br>        target.addUser(name);<br>        System.out.println(<span class="hljs-string">&quot;日志记录...&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>坏处：</p>
-<ol>
-<li>每一个方法都要手写实现。</li>
-<li>部分场景下重复代码很多。比如一个类十个方法都要实现事务的开启和关闭，代码都是一模一样的。或者RPC调用，都是发送网络请求，得到结果。</li>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>定义抽象产品接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Payment</span> &#123;  <br>    <span class="hljs-type">void</span> <span class="hljs-title function_">pay</span><span class="hljs-params">(<span class="hljs-type">double</span> amount)</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>具体的产品实现，包括：微信支付、支付宝支付。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WechatPay</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Payment</span> &#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">pay</span><span class="hljs-params">(<span class="hljs-type">double</span> amount)</span> &#123;  <br>        System.out.println(<span class="hljs-string">&quot;微信支付：&quot;</span> + amount);  <br>    &#125;  <br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AliPay</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Payment</span> &#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">pay</span><span class="hljs-params">(<span class="hljs-type">double</span> amount)</span> &#123;  <br>        System.out.println(<span class="hljs-string">&quot;阿里支付：&quot;</span> + amount);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>定义抽象工厂接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">PaymentFactory</span> &#123;  <br>    <span class="hljs-type">Payment</span> <span class="hljs-title function_">createPayment</span><span class="hljs-params">()</span>;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>具体的实现工厂。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WechatPaymentFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">PaymentFactory</span> &#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">Payment</span> <span class="hljs-title function_">createPayment</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">WechatPay</span>();  <br>    &#125;  <br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AliPaymentFactory</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">PaymentFactory</span>&#123;  <br>    <span class="hljs-meta">@Override</span>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">Payment</span> <span class="hljs-title function_">createPayment</span><span class="hljs-params">()</span> &#123;  <br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AliPay</span>();  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样，开发中，订单服务面向接口编程，不考虑具体的支付方式。<br>具体的方式可以通过Spring配置文件，配置类等方式实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">OrderService</span> &#123;  <br>  <br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> PaymentFactory paymentFactory;  <br>  <br>    <span class="hljs-type">public</span> <span class="hljs-title function_">OrderService</span><span class="hljs-params">(PaymentFactory paymentFactory)</span> &#123;  <br>        <span class="hljs-built_in">this</span>.paymentFactory = paymentFactory;  <br>    &#125;  <br>  <br>    <span class="hljs-keyword">public</span> <span class="hljs-type">void</span> <span class="hljs-title function_">payOrder</span><span class="hljs-params">(<span class="hljs-type">double</span> amount)</span> &#123;  <br>        <span class="hljs-type">Payment</span> <span class="hljs-variable">payment</span> <span class="hljs-operator">=</span> paymentFactory.createPayment();  <br>        payment.pay(amount);  <br>    &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ol>
+<li>解决了简单工厂违背开闭原则的问题，新加一个产品，创建一个具体产品实现类。根据实际情况创建一个新的产品工厂或者在对应的工厂添加产品。当然，创建新工厂符合开闭原则，在对应的工厂添加仍然违背开闭原则。</li>
+<li>解决简单工厂可能会出现创建实例复杂的问题。简单工厂如果创建对象的方式比较复杂，容易成为一个上帝类。而工厂方法通过对工厂的抽象，进行很好的封装，可以对外屏蔽创建新实例的构造过程。工厂方法将创建逻辑分散到具体工厂中，避免简单工厂因为集中创建所有产品而变成上帝类。</li>
+<li>很好的解耦和扩展性。订单服务，面向接口编程，不关注具体的支付方式。</li>
 </ol>
-<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h2><p>通过JDK实现动态代理。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">UserService</span> <span class="hljs-variable">proxy</span> <span class="hljs-operator">=</span> (UserService) Proxy.newProxyInstance(<br>            target.getClass().getClassLoader(),<br>            target.getClass().getInterfaces(),<br>            (p, method, methodArgs) -&gt; &#123;<br>                System.out.println(<span class="hljs-string">&quot;前置增强：权限校验&quot;</span>);<br>                <span class="hljs-type">Object</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> method.invoke(target, methodArgs);<br>                System.out.println(<span class="hljs-string">&quot;后置增强：日志记录&quot;</span>);<br>                <span class="hljs-keyword">return</span> result;<br>            &#125;<br>        );<br></code></pre></td></tr></table></figure>
-<h1 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h1><p>开闭性好：新加的代理逻辑不修改之前的类，比如添加事务、监控等功能时，代理类专注对应的逻辑，不用考虑具体的业务逻辑。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>代理模式是在客户端和真实对象之间加一层“中介”，用来控制访问、增强逻辑或隐藏真实对象；装饰模式则是在对象外面套一层“包装”，用来动态叠加功能。</strong></p>
+<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><p>类数量增多，简单场景下可能过度设计。</p>
 
                 
               </div>
@@ -432,8 +429,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>代理模式</div>
-      <div>https://hzsup.github.io/2026/10/02/代理模式/</div>
+      <div>工厂方法</div>
+      <div>https://hzsup.github.io/2026/10/03/工厂方法/</div>
     </div>
     <div class="license-meta">
       
@@ -445,7 +442,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年10月2日</div>
+          <div>2026年10月3日</div>
         </div>
       
       
@@ -477,18 +474,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/10/03/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/" title="工厂方法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">工厂方法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/10/02/%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" title="装饰模式">
-                        <span class="hidden-mobile">装饰模式</span>
+                      <a href="/2026/10/02/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">
+                        <span class="hidden-mobile">代理模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
